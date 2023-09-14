@@ -11,6 +11,7 @@ yarn dev
 # or
 pnpm dev
 ```
+<img width="949" alt="myapppin" src="https://github.com/ndukwesamuel/interview/assets/39251068/c440e40f-7d78-4cd7-8fba-f5214c6cd544">
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 

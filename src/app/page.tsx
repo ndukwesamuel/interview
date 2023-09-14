@@ -8,6 +8,7 @@ export default function Home() {
 
   const [faq1, setFaq1] = useState(false)
   const [faq2, setFaq2] = useState(false)
+  const [faq3, setFaq3] = useState(false)
 
   return (
     <Container>
@@ -29,7 +30,7 @@ export default function Home() {
           </form>
         </div>
 
-        <div>
+        <div className='mb-10'>
           <FAQs> FAQs</FAQs>
           <FAQs2>Are you looking for a reliable payment processor to help you expand your online business? Look no further, Zenithpay is here to help you access a larger market with ease!</FAQs2>
         </div>
@@ -94,11 +95,40 @@ export default function Home() {
             </div>
           </Section4Div>
 
-          <div>
-            Do you get a discount when you join the waitlist?
-          </div>
+          <Section4Div className='item-center'>
+            <div>
+              <Section4P> When do we launch ?</Section4P>
+              {
+                faq3 && <Section4P2>Launch April 2021.</Section4P2>
 
-          <div>When do we launch?</div>
+              }
+            </div>
+
+            <div className='item-center self-center'
+              onClick={() => setFaq3(!faq3)}
+            >
+
+              {
+                !faq3 ? <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 5V19" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M5 12H19" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                </svg> : <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M5 12H19" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+
+              }
+
+
+
+
+            </div>
+          </Section4Div>
+
+
+
+
+
+
         </div>
 
         <div className='mt-20'>

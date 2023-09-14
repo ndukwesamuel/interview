@@ -54,7 +54,7 @@ export default Footer;
 
 
 
-export const FooterCOntainer = styled.div`
+const FooterCOntainer = styled.div`
 margin-top: 50px;
 padding: 20px 0px;
 display: flex;

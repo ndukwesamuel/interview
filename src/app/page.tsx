@@ -1,6 +1,5 @@
 "use client"
 import Image from 'next/image'
-import { Containerdiv } from './Styledcomponent'
 import styled from 'styled-components';
 import { useState } from 'react';
 

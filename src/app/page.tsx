@@ -124,11 +124,6 @@ export default function Home() {
             </div>
           </Section4Div>
 
-
-
-
-
-
         </div>
 
         <div className='mt-20'>

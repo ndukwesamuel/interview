@@ -1,113 +1,299 @@
+"use client"
 import Image from 'next/image'
+import { Containerdiv } from './Styledcomponent'
+import styled from 'styled-components';
+import { useState } from 'react';
 
 export default function Home() {
+
+  const [faq1, setFaq1] = useState(false)
+  const [faq2, setFaq2] = useState(false)
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <Container>
+      <div className='w-[80%] '>
+
+        <SectionOne className=''>
+          <Title>Open Payments at the Speed of Light</Title>
+          <SectionOneP className='text-center'>Unlock Groundbreaking New Payment Experiences</SectionOneP>
+        </SectionOne>
+
+        <div className='flex   '>
+          <form className='flex w-full  justify-center'>
+            <div className='w-[40%] bg-white'>
+              <SectionTwoInput type="text" placeholder="Enter your email" />
+            </div>
+            <div>
+              <SectionTwoButton type="button">Join our waitlist</SectionTwoButton>
+            </div>
+          </form>
+        </div>
+
+        <div>
+          <FAQs> FAQs</FAQs>
+          <FAQs2>Are you looking for a reliable payment processor to help you expand your online business? Look no further, Zenithpay is here to help you access a larger market with ease!</FAQs2>
+        </div>
+
+
+        <div>
+          <Section4Div className='item-center'>
+            <div>
+              <Section4P> When do we launch ?</Section4P>
+              {
+                faq1 && <Section4P2>Launch April 2021.</Section4P2>
+
+              }
+            </div>
+
+            <div className='item-center self-center'
+              onClick={() => setFaq1(!faq1)}
+            >
+
+              {
+                !faq1 ? <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 5V19" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M5 12H19" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                </svg> : <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M5 12H19" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+
+              }
+
+
+
+
+            </div>
+          </Section4Div>
+
+          <Section4Div className='item-center'>
+            <div>
+              <Section4P>   Do you get a discount when you join the waitlist ?</Section4P>
+              {
+                faq2 && <Section4P2>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt, voluptate.</Section4P2>
+
+              }
+            </div>
+
+            <div className='item-center self-center'
+              onClick={() => setFaq2(!faq2)}
+            >
+
+              {
+                !faq2 ? <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 5V19" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M5 12H19" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                </svg> : <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M5 12H19" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+
+              }
+
+
+
+
+            </div>
+          </Section4Div>
+
+          <div>
+            Do you get a discount when you join the waitlist?
+          </div>
+
+          <div>When do we launch?</div>
+        </div>
+
+        <div className='mt-20'>
+          <Section5H2> Still have a question?</Section5H2>
+
+          <FAQs2>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</FAQs2>
         </div>
       </div>
+    </Container>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
   )
+
 }
+
+
+const Container = styled.div`
+  
+
+  color: white;
+  display: flex;
+  justify-content: center;
+
+`;
+
+const SectionOne = styled.div`
+padding: 20px 40px;
+
+`
+
+const Title = styled.h1`
+color: #FFF;
+text-align: center;
+font-family: Roboto;
+font-size: 72px;
+font-style: normal;
+font-weight: 700;
+`;
+
+const SectionOneP = styled.p`
+color: #FFF;
+text-align: center;
+/* Text/Medium/Normal */
+font-family: Roboto;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%;
+
+`
+
+const SectionTwoInput = styled.input`
+color: #505050;
+font-family: Roboto;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%;
+padding: 10px;
+border-radius: 5px;
+outline: none;
+width: 100%;
+
+
+
+
+
+`
+
+const SectionTwoButton = styled.button`
+
+background-color: #310E93;
+margin-left: 20px;
+padding: 10px 24px;
+border-radius: 5px;
+
+
+
+`
+
+
+const Post = styled.div` 
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+`;
+
+const ImgContainer = styled.div` 
+    flex: 1;
+    height: 500px;
+    position: relative;
+`;
+
+const TextContainer = styled.div`
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+`;
+
+
+const PostTitle = styled.h1`
+       font-size: 40px;
+  `;
+
+const PostDesc = styled.p`
+       font-size: 20px;
+         font-weight: 300;
+         color:  #626262;;
+    `
+
+const Button = styled.button`
+    padding: 16px 20px;
+    border: none;
+    border-radius: 5px;
+    width: max-content;
+  `
+
+const FAQs = styled.p`
+  color: #FFF;
+  font-family: Roboto;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  `
+
+const FAQs2 = styled.p`
+  color: white;
+font-family: Roboto;
+font-size: 15px;
+width: 60%;
+font-style: normal;
+font-weight: 400;
+
+  `
+
+const Section4Div = styled.div`
+  border: 1px solid white;
+  border-radius: 2px;
+  display: flex;
+  justify-content: space-between;
+  aling-items: center;
+  padding: 10px;
+  margin-bottom: 20px;
+  
+
+
+  `
+const Section4P = styled.p`
+  color: #FFF;
+font-family: Roboto;
+font-size: 24px;
+font-style: normal;
+font-weight: 700;
+  `
+
+
+const Section4P2 = styled.p`
+  color: #FFF;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  
+    `
+
+
+
+
+
+
+
+const Section5 = styled.div`
+  color: white;
+font-family: Roboto;
+font-size: 15px;
+width: 60%;
+font-style: normal;
+font-weight: 400;
+
+  `
+
+const Section5H2 = styled.h2`
+
+  color: #FFF;
+font-family: Roboto;
+font-size: 32px;
+font-style: normal;
+font-weight: 700;
+
+
+  `
+
+
+
+
+
